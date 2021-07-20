@@ -1,0 +1,4 @@
+[class*=card-product] a.title {
+        min-height: 80px;
+}
+
