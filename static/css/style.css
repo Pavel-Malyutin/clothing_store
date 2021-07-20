@@ -2,3 +2,10 @@
         min-height: 80px;
 }
 
+.gallery-wrap .img-big-wrap img {
+        display: block;
+        margin: 10px auto;
+        object-fit: contain;
+        height: 450px;
+        width: 450px;
+}
