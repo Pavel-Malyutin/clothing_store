@@ -143,7 +143,7 @@
                         {% if product.stock <= 0  %}
                             <h5>Out of stock</h5>
                         {% else %}
-                             <a href="#" class="btn btn-block btn-primary mt-1">Add to cart </a>
+                             <a href="{% url 'add_cart' product.id %}" class="btn btn-block btn-primary mt-1">Add to cart </a>
                         {% endif %}
                 </figcaption>
             </figure>
