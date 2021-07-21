@@ -5,7 +5,7 @@ from store.models import Product
 
 
 def home(request):
-    products_for_main_page = Product.objects.all().filter(is_available=True)[:20]
+    products_for_main_page = Product.objects.all().filter(is_available=True).order_by('id')[:20]
     products = Product.objects.all().filter(is_available=True)
     context = {
         'products': products_for_main_page,
