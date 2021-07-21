@@ -3,20 +3,15 @@
 
 {%  block content %}
 
-    <section class="section-pagetop bg">
-        <div class="container">
-            <h2 class="title-page">Our Store</h2>
-        </div> <!-- container //  -->
-    </section>
-
-<!-- ========================= SECTION CONTENT ========================= -->
     <section class="section-content padding-y">
     <div class="container">
 
     <div class="row">
         <aside class="col-md-3">
+        {% if 'search' in request.path %}
 
-    <div class="card">
+        {% else %}
+             <div class="card">
         <article class="filter-group">
             <header class="card-header">
                 <a href="#" data-toggle="collapse" data-target="#collapse_1" aria-expanded="true" class="">
@@ -113,7 +108,7 @@
         </article> <!-- filter-group .// -->
 
     </div> <!-- card.// -->
-
+        {% endif %}
         </aside> <!-- col.// -->
         <main class="col-md-9">
 
@@ -125,6 +120,7 @@
     </header>
 
     <div class="row">
+        {% if products %}
         {% for product in products %}
             <div class="col-md-4">
             <figure class="card card-product-grid">
@@ -145,6 +141,9 @@
             </figure>
         </div> <!-- col.// -->
         {%  endfor %}
+        {% else %}
+        <h2>No results for your request</h2>
+        {% endif %}
     </div>
 
 
