@@ -38,6 +38,11 @@ def register(request):
             user.phone = phone
             user.save()
 
+            profile = UserProfile()
+            profile.user_id = user.id
+            profile.profile_picture = 'default/default-user.png'
+            profile.save()
+
             # current_site = get_current_site(request)
             # mail_subject = 'Please activate your account'
             # message = render_to_string('accounts/account_verification_email.html', {
@@ -143,7 +148,7 @@ def activate(request, uidb64, token):
 @login_required(login_url='login')
 def dashboard(request):
     current_user = request.user
-    orders = Order.objects.order_by('-created_at').filter(user_id=current_user.id, is_ordered=True)
+    orders = Order.objects.order_by('-created_at').filter(user_id=request.user, is_ordered=True)
     orders_count = orders.count()
 
     userprofile = UserProfile.objects.get(user_id=request.user.id)
