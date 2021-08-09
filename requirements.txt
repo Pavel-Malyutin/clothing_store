@@ -1,0 +1,7 @@
+Django==3.2.5
+requests==2.26.0
+gunicorn
+psycopg2-binary
+django-environ
+python-decouple
+pillow
