@@ -5,3 +5,14 @@ psycopg2-binary
 django-environ
 python-decouple
 pillow
+asgiref==3.4.1
+certifi==2021.5.30
+charset-normalizer==2.0.3
+decouple==0.0.7
+idna==3.2
+pytz==2021.1
+pywin32==227
+requests==2.26.0
+sqlparse==0.4.1
+urllib3==1.26.6
+websocket-client==1.1.1
